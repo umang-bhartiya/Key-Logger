@@ -222,8 +222,8 @@ Keylogger_Project/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/PasswordStrengthChecker.git
-cd PasswordStrengthChecker
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name 
 ```
 
 ### 2️⃣ Install Dependencies
@@ -232,11 +232,43 @@ cd PasswordStrengthChecker
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run The Application
+### ▶️ Run The Application
 
+Start the Keylogger:
 ```bash
-python gui_app.py
+python keylogger.py
 ```
+
+Stop execution:
+```bash
+Ctrl + C
+```
+
+Encrypted logs are stored as:
+```bash
+log_YYYY-MM-DD.txt
+```
+
+Decrypt Logs (CLI):
+```bash
+python decrypt_logs.py
+```
+This will:  
+* Decrypt all available log files  
+* Display output in terminal  
+* ## Save decrypted files as:  
+```bash
+decrypted_YYYY-MM-DD.txt
+```
+
+Decrypt Logs (GUI):
+```bash
+python decrypt_logs_gui.py
+```
+Features:  
+Select log file from dropdown  
+View decrypted content  
+Automatically export decrypted file  
 
 ---
 
