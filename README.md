@@ -35,6 +35,17 @@ The author does not endorse misuse, surveillance, or data exploitation.
 
 ---
 
+## 🔐 Encryption Model  
+
+This project uses:  
+* cryptography.fernet for symmetric encryption  
+* A locally generated encryption key stored in secret.key  
+* Encrypted logs written in binary format
+
+If secret.key is deleted, logs cannot be decrypted.  
+
+---
+
 ## 🧩 Problem Statement & Solution
 
 ### 🔍 Real-Life Problem Statement
@@ -215,6 +226,13 @@ Keylogger_Project/
 ├── README.md                  # Project documentation  
 └── .gitignore                 # Prevents sensitive files from being committed  
 
+Generated at runtime (not pushed to GitHub):  
+```bash
+secret.key  
+log_YYYY-MM-DD.txt  
+decrypted_YYYY-MM-DD.txt  
+```
+
 ---
 
 ## 🛠️ Installation & Usage
@@ -266,18 +284,121 @@ Decrypt Logs (GUI):
 python decrypt_logs_gui.py
 ```
 Features:  
-Select log file from dropdown  
-View decrypted content  
-Automatically export decrypted file  
+- Select log file from dropdown  
+- View decrypted content  
+- Automatically export decrypted file  
 
 ---
 
-## 🔮 Future Enhancements
-```bash  
-├── SQLite encrypted password vault  
-├── First-run master password setup  
-├── Executable packaging (.exe)  
-└── Cross-platform UI polish
+## 🔮 Future Enhancements  
+
+#### 1️⃣ Secure Architecture Enhancements:
+
+###### 🔹 Key Rotation Mechanism
+
+Instead of a single static secret.key, implement:  
+* Time-based key rotation
+* Key versioning
+* Automatic re-encryption process
+
+This demonstrates enterprise-grade key lifecycle management.  
+
+###### 🔹 Encrypted Log Integrity (Tamper Detection)  
+
+Add:  
+* HMAC validation  
+* Hash chaining (log line → next log line)
+
+This allows detection if log files were modified.  
+
+###### 🔹 Secure Storage Abstraction  
+
+Instead of writing locally:  
+* Encrypt and store logs in a secure database (SQLite + encryption)  
+* Or encrypted blob storage
+
+This moves the project toward secure logging system design.  
+
+___
+
+#### 2️⃣ Defensive Security Enhancements  
+
+Turn this into a detection awareness tool rather than a logging tool.  
+
+###### 🔹 Add “Detection Mode”  
+
+Simulate:  
+* Suspicious process patterns  
+* Keyboard hook registration  
+* Background listener behavior
+
+Then write documentation explaining how:  
+* Antivirus detects it  
+* EDR systems flag it  
+* Windows Defender responds
+
+This becomes a blue-team educational project.  
+
+###### 🔹 Add Self-Transparency Mode  
+
+Add:  
+* Visible system tray icon  
+* Clear consent pop-up  
+* Logging session timer  
+* User permission confirmation
+
+This makes it ethically structured.  
+
+___
+
+#### 3️⃣ Enterprise-Grade Simulation Improvements  
+
+If you're thinking in terms of corporate research environments:  
+
+###### 🔹 Controlled Red-Team Simulation (Lab Only)  
+
+In legitimate corporate security labs, research tools often:  
+* Log only inside sandbox VMs  
+* Require explicit user authorization  
+* Maintain audit logs  
+* Encrypt transmission securely  
+* Avoid stealth persistence
+
+This is very different from malware-style deployment.  
+
+###### 🔹 Centralized Logging Server (Defensive Research Use)  
+
+Instead of local logs:  
+* Build a secure internal server  
+* Use HTTPS with certificate pinning  
+* Send encrypted logs over TLS  
+* Require authentication tokens
+
+This transforms your project into:  
+```bash
+“Secure Input Monitoring Research Framework”
 ```
+
+That is portfolio-appropriate.  
+
+#### 4️⃣ GUI Enhancements  
+
+For professional polish:  
+* Real-time encrypted event viewer  
+* Session management  
+* Start/Stop button in GUI  
+* Log analytics (frequency charts)  
+* Export to CSV  
+* User consent checkbox before logging begins  
+
+#### 5️⃣ Analytics & Visualization Layer  
+
+Add:  
+* Keystroke frequency distribution  
+* Session duration metrics  
+* Time-of-day activity charts  
+* Heatmap of typing activity
+
+Now it becomes behavioral analysis software — not a spyware tool.  
 
 ---
